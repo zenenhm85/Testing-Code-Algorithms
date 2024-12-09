@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Array-Strings-Hash")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eafb74fd19b252c0bad8a5bc96aa7ae0f9783531")]
 [assembly: System.Reflection.AssemblyProductAttribute("Array-Strings-Hash")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Array-Strings-Hash")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
