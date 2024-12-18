@@ -1,13 +1,93 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Array_Strings_Hash
 {
     public class ArrayExercises
     {
+
+        public int[] ProductExceptSelf(int[] nums)
+        {
+            var result = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++) 
+            {
+               
+            }
+            return result;
+        }
+        public IList<string> SummaryRanges(int[] nums)
+        {
+            var listResult = new List<string>();
+
+            if(nums.Length == 0)
+                return listResult;
+            if(nums.Length == 1) 
+            {
+                listResult.Add(nums[0].ToString());
+                return listResult;
+            } 
+
+            var start = nums[0];
+
+            for (int i = 0; i < nums.Length; i++) 
+            {
+                if (nums[i] + 1 < nums[i+1])
+                {
+                    if (nums[i] != start)
+                        listResult.Add($"{start}->{nums[i]}");
+                    else
+                        listResult.Add($"{start}");
+
+                    start = nums[i+1];
+                }
+                if (i + 1 == nums.Length-1) 
+                {
+                    if (nums[i + 1] == start)
+                        listResult.Add($"{nums[i + 1]}");
+                    else
+                        listResult.Add($"{start}->{nums[i + 1]}");
+                    break;
+                }
+            }
+            
+            return listResult;
+        }
+        public string LongestCommonPrefix(string[] strs)
+        {
+            if (strs.Length == 1) 
+            {
+                return strs[0];
+            }
+
+            var auxLength = int.MaxValue;
+            for (int i = 0; i < strs.Length; i++) {
+                if (strs[i].Length < auxLength) 
+                {
+                    auxLength = strs[i].Length;
+                }
+            }
+
+            var result = "";
+            for (int i = 1; i <= auxLength; i++)
+            {
+                var response = strs[0].Substring(0, i);
+                var found = true;
+                for (int k = 0; k < strs.Length; k++) 
+                {
+                    var current = strs[k].Substring(0, i);
+                    if (current != response) 
+                    {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found)
+                    result = response;
+                else
+                    return result;
+            }
+            return result;
+        }
         public int MaxProfit(int[] prices)
         {
             var profit = 0;
